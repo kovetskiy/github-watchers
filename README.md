@@ -1,4 +1,4 @@
-# Do you wanna list watchers of all your projects?
+# Who watches the watchmen?
 
 I don't know why github do not send notifications about new watchers, but I
 think, repository watchers it's more importantly than stargazers, and I really
