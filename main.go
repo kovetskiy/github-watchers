@@ -93,9 +93,10 @@ func getRepositories(
 	repositories, _, err := github.Repositories.List(
 		username,
 		&libgithub.RepositoryListOptions{
-			Type:      "owner",
-			Sort:      "updated",
-			Direction: "desc",
+			Type:        "owner",
+			Sort:        "updated",
+			Direction:   "desc",
+			ListOptions: libgithub.ListOptions{PerPage: 99999},
 		},
 	)
 	if err != nil {
