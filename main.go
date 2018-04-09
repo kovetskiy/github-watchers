@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"strconv"
@@ -70,6 +71,7 @@ func getWatchers(
 	github *libgithub.Client, username string, repository string,
 ) ([]Watcher, error) {
 	users, _, err := github.Activity.ListWatchers(
+		context.Background(),
 		username, repository, nil,
 	)
 	if err != nil {
@@ -91,6 +93,7 @@ func getRepositories(
 	github *libgithub.Client, username string,
 ) ([]string, error) {
 	repositories, _, err := github.Repositories.List(
+		context.Background(),
 		username,
 		&libgithub.RepositoryListOptions{
 			Type:        "owner",
